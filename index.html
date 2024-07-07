@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control Panel</title>
+    <!-- link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for pop-up content */
+        .modal .modal-content {
+            background-color: #333;
+            margin: 15% auto;
+            padding: 10px; 
+            width: 30%; 
+            max-width: 250px; 
+            color: #00ccff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+            text-align: center;
+            border: 2px solid #00ccff;
+        }
+    </style>
+</head>
+<body>
+    <!-- main heading of the control panel -->
+    <h1>Robot Control Panel</h1>
+
+    <!-- control panel form for sending commands -->
+    <div class="control-panel">
+        <form method="post" action="control.php" id="controlForm">
+            <button type="submit" name="direction" value="forward">Forward</button><br>
+            <button type="submit" name="direction" value="left">Left</button>
+            <button type="submit" name="direction" value="stop">Stop</button>
+            <button type="submit" name="direction" value="right">Right</button><br>
+            <button type="submit" name="direction" value="backward">Backward</button>
+        </form>
+    </div>
+
+    <!-- pop-up Window -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        // run script when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+
+            // check if there's a message parameter
+            if (message) {
+                // get the pop-up and elements inside it
+                var modal = document.getElementById("successModal");
+                var span = document.getElementsByClassName("close")[0];
+                var modalMessage = document.getElementById("modalMessage");
+
+                // set the message inside the pop-up
+                modalMessage.textContent = message;
+
+                // display the pop-up
+                modal.style.display = "block";
+
+                // close pop-up when clicking on (x)
+                span.onclick = function() {
+                    modal.style.display = "none";
+                    // clear the message after closing the pop-up
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
+
+                // close pop-up when clicking outside of it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        // clear the message after closing the pop-up
+                        window.history.replaceState({}, document.title, window.location.pathname);
+                    }
+                }
+
+                // auto-fade and hide the pop-up after a delay
+                setTimeout(function() {
+                    modal.classList.add('fade-out');
+                    setTimeout(function() {
+                        modal.style.display = "none";
+                        modal.classList.remove('fade-out');
+                        window.history.replaceState({}, document.title, window.location.pathname);
+                    }, 500); // duration of fade-out effect
+                }, 1000); // time before fade-out starts
+            }
+        });
+    </script>
+</body>
+</html>
