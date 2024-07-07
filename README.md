@@ -14,9 +14,10 @@ https://github.com/malakalhanafi02/RobotControlPanel/assets/122760944/f8c50448-7
 3. Run the downloaded installer and follow the instructions to install XAMPP on your machine
    <img width="497" alt="image" src="https://github.com/malakalhanafi02/RobotControlPanel/assets/122760944/6bf3cfdf-0e56-4cc9-a79e-ff578188e6fb">
 4. Choose the default settings and complete the installation
+
    <img width="489" alt="image" src="https://github.com/malakalhanafi02/RobotControlPanel/assets/122760944/f39cb07e-7ded-4e6a-a0a2-6d2fa427cb00">
-5. MySQL should be running on port 3307 (mine could not run on 3306)
-6. Start Apache and MySQL
+6. MySQL should be running on port 3307 (mine could not run on 3306)
+7. Start Apache and MySQL
 <img width="659" alt="image" src="https://github.com/malakalhanafi02/RobotControlPanel/assets/122760944/36e362ec-6f5e-4f89-bd81-e952176cb6f7">
 
 ---
