@@ -1,4 +1,4 @@
-# 🤖Here we will dislay the latest movement of the robot🤖
+# 🤖Here we will display the latest movement of the robot🤖
 
 https://github.com/malakalhanafi02/RobotControlPanel/assets/122760944/32bd950f-ed6c-4c92-9df4-c10fb6f991bb
 
