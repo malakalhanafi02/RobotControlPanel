@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Stored Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Stored Data</h1>
+    <div class="data-display">
+        <p>Last Command: <span id="lastCommand"></span></p>
+    </div>
+    <script>
+        // Fetch the last stored command from the server
+        fetch('display.php')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('lastCommand').textContent = data.command;
+            });
+    </script>
+</body>
+</html>
