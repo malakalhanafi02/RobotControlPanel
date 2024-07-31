@@ -1,5 +1,6 @@
 # ESP32 Integration with Robot Control Panel
 
+<img width="838" alt="image" src="https://github.com/user-attachments/assets/3f77fa14-def7-4722-86de-bd843e4c5204">
 
 https://github.com/user-attachments/assets/385e7733-f86a-4e6e-a553-b85b8c34fafb
 
